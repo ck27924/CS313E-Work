@@ -6,14 +6,14 @@ import sys
 # Output: function returns an encrypted string 
 def encrypt ( strng ):
   a= len(strng)
-  while int(math.sqrt(len(a))) % 1 != 0:
+  while int(math.sqrt(a)) % 1 != 0:
     strng += "*"
   k = int (math.sqrt(len(strng)))
 
   index=0
   table= [[0 for i in range(k)] for j in range(k)] #create an empty table
   for i in range(len(table)-1, -1, -1):
-    for j in range (len(table)): 
+    for j in range (len(table)): #keeps columns constant while increasing the index of rows until it hits length of table
       table[j][i]= strng[index]
       index +=1
 
