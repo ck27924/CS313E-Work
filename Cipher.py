@@ -18,11 +18,11 @@ def encrypt ( strng ):
       index +=1
 
   newList=[] 
-  for i in range(len(table)): #traverses through the table and adds the encrypted string in to a string
+  for i in range(len(table)): #traverses through the table and adds the encrypted string in to a list
     for j in range(len(table)):
       if table[i][j] != "*":
         newList.append(table[i][j])
-        encryptStr= "".join(newList)
+        encryptStr= "".join(newList) #creates a new string of the encrypted sentence from the list after removing "*"
 
   return (encryptStr)
 
